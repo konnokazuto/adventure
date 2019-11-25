@@ -1,18 +1,16 @@
 <template>
   <div id="gameScreen">
-      <hoge />
+      <textBox />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/atoms/atomLogo'
-import hoge from '~/components/organisms/textBox'
+import Logo from '~/components/atoms/atomText'
+import textBox from '~/components/organisms/textBox'
 
 export default {
   components: {
-    Logo,
-    hoge
-
+    textBox
   }
 }
 </script>
