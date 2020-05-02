@@ -1,6 +1,6 @@
 export const state = () => ({
-    counter: 0,
-    url: require('@/assets/faceVariations/necchusyou_face_girl1.png')
+    counter: -1,
+    url: require('@/assets/faceVariations/necchusyou_face_girl' + 1 + '.png')
   })
 
   export const getters = {
@@ -12,5 +12,9 @@ export const state = () => ({
   export const mutations = {
     setFaceVariation (state, n) {
       state.url = require('@/assets/faceVariations/necchusyou_face_girl' + n + '.png')
+    },
+
+    setCounter (state) {
+        state.counter += 1
     }
   }

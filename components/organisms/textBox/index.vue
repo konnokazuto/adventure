@@ -1,70 +1,186 @@
 <template>
-    <div class="text-box pink" id="js-text-box">
+    <div class="textBox">
+        <div class="hoge2" :style="backgroundImage()"></div>
         <div class="character">
             <img :src="imageUrl" class="">
         </div>
-        <div class="name-box" id="js-name-box">ありさん</div>
-        <div class="text-box-main" id="js-text-box-main">
+        <div class="textBox__name" id="js-name-box">{{plot[plotNumber].character}}</div>
+        <div class="textBox__main" id="js-text-box-main">
             <div id="js-text-box-main-inner" class="text-box-main-inner">
                 <div>
-                    <span v-for="(item, index) in text1"
-                    key="item"
-                    :style="{ animationDelay: index*40+'ms' }"
-                    class="hoge">{{ item }}</span>
+                    {{ text }}
+                    <!-- <span
+                        v-for="(item, index) in text"
+                        :key="index"
+                        :style="{animationDelay: index*40+'ms'}"
+                        class="hoge"
+                    >
+                        {{ item }}
+                    </span> -->
+                    <!-- <span
+                        v-for="(item, index) in text"
+                        :key="index"
+                        class="hoge"
+                    >
+                        {{ item }}
+                    </span> -->
                 </div>
             </div>
-            <button @click="hoge()" class="next-btn blue">Next</button>
+            <button @click="hoge()" class="textBox__button">Next</button>
         </div>
     </div>
 </template>
 <script>
-import atomText from '~/components/atoms/atomText'
+import atomText from '~/components/Atoms/AtomText'
+import BranchScreen from '~/components/Organisms/BranchScreen'
+import { mapState } from "vuex";
+
 export default {
     components: {
         atomText
     },
     data() {
         return {
-            text: [
-                    '吾輩は猫である。名前はまだない。どこで生れたか頓（とん）と見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。',
-                    'しかもあとで聞くとそれは書生という人間中で一番獰悪（どうあく）な種族であったそうだ。',
-                    'の書生というのは時々我々を捕（つかま）えて煮て食うという話である。しかしその当時は何という考（かんがえ）もなかったから別段恐しいとも思わなかった。'
+            plot: [
+                {
+                    character: 'エンマ',
+                    background: require('@/assets/backgroundImage/upstairs.jpg'),
+                    face: require('@/assets/faceVariations/enmadaiou.png'),
+                    message: [
+                        '次の死者入れ！',
+                        'ん……？',
+                        'あーあ、お前か？前世の記憶がないってやつは。'
+                    ]
+                },
+                {
+                    character: 'ボク',
+                    face: require('@/assets/faceVariations/enmadaiou.png'),
+                    message: [
+                        'はい、自分が一体誰なのか',
+                        'そもそもなんで死んだのかまったく思い出せないんです。',
+                    ]
+                },
+                {
+                    character: 'エンマ',
+                    background: require('@/assets/backgroundImage/upstairs.jpg'),
+                    face: require('@/assets/faceVariations/enmadaiou.png'),
+                    message: [
+                        'お前さんねぇ、今どきそんな嘘ついたって天国には行けはしねぇのよ。',
+                        'でもまぁ',
+                        'お前にチャンスをやろう。。'
+                    ]
+                },
+
             ],
-            text1:'',
-            isShow: false
+            text:'',
+            isShow: false,
+            count: -1,
+            plotNumber: 0,
+            url: '@/components/assets/backgroundImage/upstairs.jpg'
         }
     },
     computed: {
         imageUrl() {
-            return this.$store.state.url
+            return this.plot[this.plotNumber].face
         }
     },
     methods: {
-         hoge() {
-             this.$store.commit('setFaceVariation', 5)
-             console.log(this.$store.state.url);
+        hoge() {
+            this.count++;
+            this.text = this.plot[this.plotNumber].message[this.count]
+            if (this.count >= this.plot[this.plotNumber].message.length) {
+                this.count = 0
+                this.plotNumber++
+                this.text = this.plot[this.plotNumber].message[this.count]
+            }
+            return
+            /* this.$store.commit('setCounter')
+            this.text = this.texthoge[this.$store.state.counter]
+            this.$store.commit('setFaceVariation', 5) */
              /* this.imageUrl = require("@/assets/faceVariations/necchusyou_face_girl" + slug + ".png"); */
-            /* const TextMessage = this.text[index].split('');
-            this.text1 = TextMessage */
+            /* const TextMessage = this.text
+            console.log(TextMessage);
+            this.text = texthoge */
+        },
+        backgroundImage () {
+            return {
+                backgroundImage: 'url(' + this.plot[this.plotNumber].background + ')',
+                width: '100%',
+                height: '100vh',
+                backgroundSize: 'cover',
+                backgroundAttachment: 'fixed',
+                transition: 'all 1s ease-out',
+                position: 'absolute',
+                zIndex: '-10'
+            }
         }
     }
 }
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.textBox {
+    &__name {
+        line-height: .755;
+        width: 290px;
+        height: 77px;
+        top: 14px;
+        position: relative;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 17px;
+        padding-left: 30px;
+        font-weight: 700;
+    }
+    &__main {
+        width: 100%;
+        height: 222px;
+        color: #393536;
+        line-height: 1.5;
+        border-style: solid;
+        border-width: 5px;
+        border-color: #04b6b8;
+        border-radius: 10px;
+        background-color: rgba(255,250,250,.8);
+        padding: 30px 25px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    &__button {
+        color: #fff;
+        border-style: solid;
+        border-width: 6px;
+        border-color: #fff;
+        background-color: #04b6b8;
+        border-radius: 30px;
+        position: absolute;
+        width: 200px;
+        font-size:35px;
+        height: 60px;
+        line-height: 46px;
+        display: block;
+        right: -20px;
+        top: 190px;
+        text-align: center;
+        text-decoration: none;
+        transition: all .35s;
+    }
+}
 #js-text-box {
     position:absolute;
     bottom:100px;
     left:50px;
+    font-size: 35px;
 }
 #js-text-box-main {
     position:relative;
 }
 @keyframes show{
-   0% {
-    opacity: 0;
-  }
+    0% {
+        opacity: 0;
+    }
 }
 .hoge {
     animation:show 0.09s linear 0s backwards;
@@ -77,7 +193,7 @@ export default {
 .character {
     text-align: center;
     img {
-        width:260px;
+        width:350px;
     }
 }
 
@@ -94,7 +210,7 @@ export default {
     margin: 0 auto;
 }
 
-.text-box .name-box {
+.textox .name-box {
     line-height: .755;
     width: 290px;
     height: 77px;
