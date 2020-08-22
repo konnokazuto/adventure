@@ -15,6 +15,9 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    baseURL: (process.env.NODE_ENV === 'production' ? 'http//your-url' : 'http://localhost:3000')
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -29,6 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/plots/plot'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -39,6 +43,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    "@nuxtjs/axios"
   ],
   /*
   ** Build configuration
@@ -47,7 +52,28 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    loaders: {
+      vue: {
+        transformAssetUrls: {
+          audio: 'src'
+        }
+      }
+    },
     extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.(ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
     }
-  }
+  },
+  rules: [
+    {
+      test: /\.json$/,
+      loader: "json-loader",
+      type: "javascript/auto"
+    }
+  ]
 }

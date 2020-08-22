@@ -1,32 +1,16 @@
 <template>
     <div class="textBox">
-        <div class="hoge2" :style="backgroundImage()"></div>
-        <div class="character">
-            <img :src="imageUrl" class="">
+        <div class="textBox__character">
+            <img :src="imageUrl" class="textBox__characterImage">
         </div>
-        <div class="textBox__name" id="js-name-box">{{plot[plotNumber].character}}</div>
-        <div class="textBox__main" id="js-text-box-main">
-            <div id="js-text-box-main-inner" class="text-box-main-inner">
-                <div>
+        <div v-if="boxShow" class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
+        <div v-if="boxShow" :class="{pink: plot[plotNumber].color}" class="textBox__main">
+            <div>
+                <div class="aho">
                     {{ text }}
-                    <!-- <span
-                        v-for="(item, index) in text"
-                        :key="index"
-                        :style="{animationDelay: index*40+'ms'}"
-                        class="hoge"
-                    >
-                        {{ item }}
-                    </span> -->
-                    <!-- <span
-                        v-for="(item, index) in text"
-                        :key="index"
-                        class="hoge"
-                    >
-                        {{ item }}
-                    </span> -->
                 </div>
             </div>
-            <button @click="hoge()" class="textBox__button">Next</button>
+            <button @click="hoge()" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
         </div>
     </div>
 </template>
@@ -39,79 +23,40 @@ export default {
     components: {
         atomText
     },
+    props: {
+        plot: {
+            type: Array,
+            required: true
+        }
+    },
     data() {
         return {
-            plot: [
-                {
-                    character: 'エンマ',
-                    background: require('@/assets/backgroundImage/upstairs.jpg'),
-                    face: require('@/assets/faceVariations/enmadaiou.png'),
-                    message: [
-                        '次の死者入れ！',
-                        'ん……？',
-                        'あーあ、お前か？前世の記憶がないってやつは。'
-                    ]
-                },
-                {
-                    character: 'ボク',
-                    face: require('@/assets/faceVariations/enmadaiou.png'),
-                    message: [
-                        'はい、自分が一体誰なのか',
-                        'そもそもなんで死んだのかまったく思い出せないんです。',
-                    ]
-                },
-                {
-                    character: 'エンマ',
-                    background: require('@/assets/backgroundImage/upstairs.jpg'),
-                    face: require('@/assets/faceVariations/enmadaiou.png'),
-                    message: [
-                        'お前さんねぇ、今どきそんな嘘ついたって天国には行けはしねぇのよ。',
-                        'でもまぁ',
-                        'お前にチャンスをやろう。。'
-                    ]
-                },
-
-            ],
-            text:'',
+            boxShow: true,
             isShow: false,
-            count: -1,
+            count: 0,
             plotNumber: 0,
             url: '@/components/assets/backgroundImage/upstairs.jpg'
         }
     },
     computed: {
-        imageUrl() {
+        imageUrl () {
             return this.plot[this.plotNumber].face
-        }
+        },
+        text () {
+            return this.plot[this.plotNumber].message[this.count]
+        }   
     },
     methods: {
         hoge() {
-            this.count++;
-            this.text = this.plot[this.plotNumber].message[this.count]
+            this.count++
             if (this.count >= this.plot[this.plotNumber].message.length) {
+                if(this.plotNumber + 1 === this.plot.length) {
+                    this.$store.commit('question/SET_QUESTION', this.plot[this.plotNumber].aho)
+                    this.$store.commit('question/SHOW_QUESTION')
+                    return
+                }
                 this.count = 0
                 this.plotNumber++
-                this.text = this.plot[this.plotNumber].message[this.count]
-            }
-            return
-            /* this.$store.commit('setCounter')
-            this.text = this.texthoge[this.$store.state.counter]
-            this.$store.commit('setFaceVariation', 5) */
-             /* this.imageUrl = require("@/assets/faceVariations/necchusyou_face_girl" + slug + ".png"); */
-            /* const TextMessage = this.text
-            console.log(TextMessage);
-            this.text = texthoge */
-        },
-        backgroundImage () {
-            return {
-                backgroundImage: 'url(' + this.plot[this.plotNumber].background + ')',
-                width: '100%',
-                height: '100vh',
-                backgroundSize: 'cover',
-                backgroundAttachment: 'fixed',
-                transition: 'all 1s ease-out',
-                position: 'absolute',
-                zIndex: '-10'
             }
         }
     }
@@ -121,11 +66,20 @@ export default {
 
 <style lang="scss" scoped>
 .textBox {
-    &__name {
+    &__character {
+        text-align: center;
+    }
+    &__characterImage {
+        width: 290px;
+        height: 400px;
+        object-fit: cover;
+    }
+    &__characterName {
         line-height: .755;
         width: 290px;
         height: 77px;
         top: 14px;
+        left: 320px;
         position: relative;
         color: #fff;
         background-repeat: no-repeat;
@@ -133,10 +87,16 @@ export default {
         padding-top: 17px;
         padding-left: 30px;
         font-weight: 700;
+        font-size: 25px;
+        background-image: url('~@/assets/backgroundImage/name-bg-man.png');
+    }
+    &__characterName.pink {
+        background-image: url('~@/assets/backgroundImage/name-bg.png');
     }
     &__main {
-        width: 100%;
+        width: 800px;
         height: 222px;
+        margin: 0 auto;
         color: #393536;
         line-height: 1.5;
         border-style: solid;
@@ -146,7 +106,13 @@ export default {
         background-color: rgba(255,250,250,.8);
         padding: 30px 25px;
         font-weight: 700;
+        letter-spacing: 0.5px;
         cursor: pointer;
+        position: relative;
+        font-size: 32px;
+    }
+    &__main.pink {
+        border-color: #ea1e63;
     }
     &__button {
         color: #fff;
@@ -166,98 +132,46 @@ export default {
         text-align: center;
         text-decoration: none;
         transition: all .35s;
+        &:hover {
+            border-color: #04b6b8;
+        }
+        &:active {
+            transform: translateY(4px);/*下に動く*/
+        }
+    }
+    &__button.pink {
+        background-color: #ea1e63;
+        &:hover {
+            border-color: #ea1e63;
+        }
+    }
+    @keyframes show {
+        0% {
+            opacity: 0;
+        }
+    }
+    &__hoge {
+        display: inline-block;
+        min-width: 0.3em;
+        font-size: 2rem;
+        animation: show 1s cubic-bezier(0.22, 0.15, 0.25, 1.43) 1s backwards;
     }
 }
-#js-text-box {
-    position:absolute;
-    bottom:100px;
-    left:50px;
-    font-size: 35px;
-}
-#js-text-box-main {
-    position:relative;
-}
+
 @keyframes show{
     0% {
+        transform: translate(0, -20px);
         opacity: 0;
     }
 }
-.hoge {
-    animation:show 0.09s linear 0s backwards;
-    font-size:30px;
-}
-.hoge.is-show {
-    opacity:1;
-}
-
-.character {
-    text-align: center;
-    img {
-        width:350px;
-    }
-}
-
 .name-box {
     background-image: url('~@/assets/backgroundImage/name-bg-man.png');
 }
 
-.transitionRate {
-    color:red;
-}
+
 .text-box {
     width: 92%;
     bottom: 50px;
     margin: 0 auto;
-}
-
-.textox .name-box {
-    line-height: .755;
-    width: 290px;
-    height: 77px;
-    top: 14px;
-    position: relative;
-    color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 17px;
-    padding-left: 30px;
-    font-weight: 700;
-}
-.text-box-main {
-    border-color: #ea1e63;
-}
-.text-box .text-box-main {
-    width: 100%;
-    height: 222px;
-    color: #393536;
-    line-height: 1.5;
-    border-style: solid;
-    border-width: 5px;
-    border-color: #04b6b8;
-    border-radius: 10px;
-    background-color: rgba(255,250,250,.8);
-    padding: 30px 25px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.text-box .next-btn {
-    color: #fff;
-    border-style: solid;
-    border-width: 6px;
-    border-color: #fff;
-    background-color: #04b6b8;
-    border-radius: 30px;
-    position: absolute;
-    width: 200px;
-    font-size:35px;
-    height: 60px;
-    line-height: 46px;
-    display: block;
-    right: -20px;
-    top: 190px;
-    text-align: center;
-    text-decoration: none;
-    transition: all .35s;
 }
 </style>
