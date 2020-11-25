@@ -1,13 +1,14 @@
 <template>
     <div class="backGround">
+        {{background}}
         <div class="backGround__backLayer"></div>
-        <img :src="background" alt="背景画像" class="backGround__image">
+        <img alt="背景画像" class="backGround__image">
     </div>
 </template>
 <script>
 export default {
     props: {
-        img: {
+        background: {
             type: String,
             required: true
         }
@@ -30,7 +31,7 @@ export default {
         bottom: 0;
         left: 0;
         right: 0;
-        z-index:9
+        z-index:9;
     }
     &__image {
         width: 100%;

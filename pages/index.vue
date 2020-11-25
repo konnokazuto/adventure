@@ -1,14 +1,12 @@
 <template>
-	<div class="gameScreen">
+	<!-- <div class="gameScreen">
     	<div class="gameScreen__inner">
-    		<!-- <text-box class="gameScreen__textBox"></text-box>
-      		<back-ground class="gameScreen__backGround"></back-ground> -->
-			<button @click="play">
-    			<span>Play/Pause</span>
-			</button>
-			{{isPlay}}
-			<audio src="@/assets/bgm/n94.mp3"></audio>
+    		<text-box class="gameScreen__textBox"></text-box>
+      		<back-ground class="gameScreen__backGround"></back-ground>
     	</div>
+	</div> -->
+	<div>
+		hoge
 	</div>
 </template>
 
@@ -28,7 +26,7 @@ export default {
 			isPlay: false
 		}
 	},
-	methods: {
+	/* methods: {
 		play () {
 			const audioElement = document.querySelector('audio');
 			if (this.isPlay) {
@@ -41,12 +39,11 @@ export default {
 		}
 	},
 	mounted () {
-		const audioContext = new AudioContext();
 		const audioElement = document.querySelector('audio');
 		const track = audioContext.createMediaElementSource(audioElement);
 		console.log(track)
 		track.connect(audioContext.destination);
-	}
+	} */
 }
 </script>
 

@@ -4,6 +4,11 @@ export default {
   /*
   ** Headers of the page
   */
+  router: {
+      middleware: [
+          'setDeviceType'
+      ]
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -21,7 +26,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: false,
   /*
   ** Global CSS
   */
@@ -32,7 +37,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/plots/plot'
+    '@/plugins/plots/plot',
+    '@/plugins/audio.js',
+    '@/plugins/mixins/global.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -43,7 +50,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    'nuxt-user-agent'
   ],
   /*
   ** Build configuration
