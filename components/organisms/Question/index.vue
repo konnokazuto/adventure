@@ -29,6 +29,8 @@ export default {
             const plots = await this.$axios.$get(`/plot/${value}.json`)
             this.$store.commit("plot/SET_PLOT", plots)
             this.$store.commit('question/SHOW_QUESTION')
+            this.$store.commit('plot/RESET_PLOT_COUNT')
+            this.$store.commit('plot/RESET_PLOT_NUMBER')
         }
     },
 }
@@ -101,7 +103,7 @@ export default {
         color: #fff;
         font-size: 2rem;
         font-weight: 700;
-        margin: 0 auto;
+        margin: 0 auto 20px;
         text-align: center;
     }
     &__lists {
@@ -112,7 +114,7 @@ export default {
         border-radius: 10px;
         background-color: rgba(241,255,255,.4);
         margin: 0 auto;
-        width: 80%;
+        width: 90%;
         height: 20%;
         margin-bottom: 18px;
         box-sizing: border-box;

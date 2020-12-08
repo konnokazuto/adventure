@@ -3,6 +3,7 @@
         "character": "???",
         "color": false,
         "face": "enmadaiou.png",
+        "background": "dining.jpg",
         "message": [
             "choice2",
             "ん……？",
@@ -13,6 +14,7 @@
         "character": "???",
         "color": true,
         "face": "necchusyou_face_girl1.png",
+        "background": "dining.jpg",
         "message": [
             "お帰りなさい",
             "ん……？",

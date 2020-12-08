@@ -3,7 +3,7 @@
         "character": "???",
         "color": false,
         "face": "enmadaiou.png",
-        "background": "@/assets/backgroundImage/upstairs.jpg",
+        "background": "upstairs.jpg",
         "message": [
             "お帰りなさい",
             "ん……？",
@@ -13,8 +13,8 @@
     {
         "character": "???",
         "color": true,
+        "background": "dining.jpg",
         "face": "necchusyou_face_girl1.png",
-        "background": "@/assets/backgroundImage/upstairs.jpg",
         "message": [
             "お帰りなさい",
             "ん……？",

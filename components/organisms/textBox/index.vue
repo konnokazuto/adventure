@@ -11,20 +11,18 @@
                         {{ text }}
                     </div>
                 </div>
-                <button @click="hoge()" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
+                <button @click="hoge" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
+            </div>
+            <div class="textBox__background">
+                <img :src="require(`@/assets/backgroundImage/${backgroundUrl}`)" alt="hoge">
             </div>
         </div>
     </div>
 </template>
 <script>
-import atomText from '~/components/Atoms/AtomText'
-import BranchScreen from '~/components/Organisms/BranchScreen'
 import { mapState } from "vuex";
 
 export default {
-    components: {
-        atomText
-    },
     props: {
         plot: {
             type: Array,
@@ -33,35 +31,36 @@ export default {
     },
     data() {
         return {
-            boxShow: true,
-            isShow: false,
-            count: 0,
-            plotNumber: 0,
-            url: '@/components/assets/backgroundImage/upstairs.jpg'
+            boxShow: true
         }
     },
     computed: {
+        ...mapState({
+            plotCount: state => state.plot.plotCount,
+            plotNumber: state => state.plot.plotNumber,
+        }),
         imageUrl () {
             return this.plot[this.plotNumber].face
         },
         text () {
-            return this.plot[this.plotNumber].message[this.count]
+            return this.plot[this.plotNumber].message[this.plotCount]
+        },
+        backgroundUrl () {
+            return this.plot[this.plotNumber].background
         }   
     },
     methods: {
         hoge() {
-            this.count++
-            if (this.count >= this.plot[this.plotNumber].message.length) {
+            if (this.plotCount + 1 >= this.plot[this.plotNumber].message.length) {
                 if(this.plotNumber + 1 === this.plot.length) {
                     this.$store.commit('question/SET_QUESTION', this.plot[this.plotNumber].choices)
                     this.$store.commit('question/SHOW_QUESTION')
-                    this.count = 0
-                    this.plotNumber = 0
                     return
                 }
-                this.count = 0
-                this.plotNumber++
+                this.$store.commit('plot/RESET_PLOT_COUNT')
+                this.$store.commit('plot/ADD_PLOT_NUMBER')
             }
+            this.$store.commit('plot/ADD_PLOT_COUNT')
         }
     }
 }
@@ -160,22 +159,37 @@ export default {
         font-size: 2rem;
         animation: show 1s cubic-bezier(0.22, 0.15, 0.25, 1.43) 1s backwards;
     }
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1000;
+    }
+    &__background img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .sp .textBox {
     &__inner {
         position: absolute;
-        bottom: 40px;
+        bottom:5vh;
         right:0;
         left:0;
         z-index: 1000;
     }
     &__character {
         text-align: center;
+        margin: 0 auto;
+        width: 70%;
+        width: 250px;
+        height: 250px;
     }
     &__characterImage {
-        width: 290px;
-        height: 400px;
+        height: 100%;
         object-fit: cover;
     }
     &__characterName {
@@ -198,7 +212,7 @@ export default {
     }
     &__main {
         width: 100%;
-        height: 222px;
+        height: 40vh;
         margin: 0 auto;
         color: #393536;
         line-height: 1.5;
@@ -227,9 +241,9 @@ export default {
         width: 200px;
         font-size:35px;
         height: 60px;
-        line-height: 46px;
         display: block;
-        top: 190px;
+        bottom: -5vh;
+        right: 0;
         text-align: center;
         text-decoration: none;
         transition: all .35s;
