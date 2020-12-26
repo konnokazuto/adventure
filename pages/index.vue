@@ -3,7 +3,7 @@
         <div class="gameScreen__inner">
             <text-box @hoge="hoge" :plot="plots" class="gameScreen__textBox"></text-box>
             <question v-if="question"></question>
-            <audio></audio>
+            <bgm></bgm>
         </div>
 	</div>
 </template>
@@ -13,14 +13,14 @@ import { mapState } from 'vuex'
 import TextBox from '@/components/Organisms/TextBox'
 import Timer from '@/components/Organisms/Timer'
 import question from '@/components/Organisms/Question'
-import audio from '@/components/Molecules/Audio'
+import bgm from '@/components/Molecules/bgm'
 
 export default {
 	components: {
 		TextBox,
         Timer,
         question,
-        audio
+        bgm
     },
     data () {
         return {

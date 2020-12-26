@@ -4,6 +4,7 @@
         "color": false,
         "background": "upstairs.jpg",
         "face": "enmadaiou.png",
+        "bgm": "saiban.mp3",
         "message": [
             "choice1",
             "ん……？",
@@ -14,6 +15,7 @@
         "character": "???",
         "color": true,
         "background": "dining.jpg",
+        "bgm": "saiban.mp3",
         "face": "necchusyou_face_girl1.png",
         "message": [
             "お帰りなさい",

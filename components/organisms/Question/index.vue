@@ -20,7 +20,8 @@ import { mapState } from "vuex"
 export default {
     computed: {
         ...mapState ({
-            choices: state => state.question.choices
+            choices: state => state.question.choices,
+            audioElement: state => state.audio.audioElement,
         })
     },
     methods: {
@@ -31,6 +32,7 @@ export default {
             this.$store.commit('question/SHOW_QUESTION')
             this.$store.commit('plot/RESET_PLOT_COUNT')
             this.$store.commit('plot/RESET_PLOT_NUMBER')
+            this.audioElement.currentTime = 0
         }
     },
 }

@@ -36,23 +36,24 @@ export default {
     },
     computed: {
         ...mapState({
+            plots: state => state.plot.plots,
             plotCount: state => state.plot.plotCount,
             plotNumber: state => state.plot.plotNumber,
         }),
         imageUrl () {
-            return this.plot[this.plotNumber].face
+            return this.plots[this.plotNumber].face
         },
         text () {
-            return this.plot[this.plotNumber].message[this.plotCount]
+            return this.plots[this.plotNumber].message[this.plotCount]
         },
         backgroundUrl () {
-            return this.plot[this.plotNumber].background
+            return this.plots[this.plotNumber].background
         }   
     },
     methods: {
         hoge() {
-            if (this.plotCount + 1 >= this.plot[this.plotNumber].message.length) {
-                if(this.plotNumber + 1 === this.plot.length) {
+            if (this.plotCount + 1 >= this.plots[this.plotNumber].message.length) {
+                if(this.plotNumber + 1 === this.plots.length) {
                     this.$store.commit('question/SET_QUESTION', this.plot[this.plotNumber].choices)
                     this.$store.commit('question/SHOW_QUESTION')
                     return

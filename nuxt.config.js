@@ -38,7 +38,6 @@ export default {
   */
   plugins: [
     '@/plugins/plots/plot',
-    '@/plugins/audio.js',
     '@/plugins/mixins/global.js'
   ],
   /*
