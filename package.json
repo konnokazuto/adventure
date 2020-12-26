@@ -19,6 +19,7 @@
     "lodash": "^4.17.20",
     "minimist": "^1.2.5",
     "nuxt": "^2.14.3",
+    "nuxt-user-agent": "^1.2.2",
     "serialize-javascript": "^4.0.0",
     "vuex": "^3.5.1"
   },

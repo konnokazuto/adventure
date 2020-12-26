@@ -1,0 +1,43 @@
+[
+    {
+        "character": "???",
+        "color": false,
+        "background": "upstairs.jpg",
+        "face": "enmadaiou.png",
+        "bgm": "saiban.mp3",
+        "message": [
+            "choice1",
+            "ん……？",
+            "あーあ、お前か？前世の記憶がないってやつは。"
+        ]
+    },
+    {
+        "character": "???",
+        "color": true,
+        "background": "dining.jpg",
+        "bgm": "saiban.mp3",
+        "face": "necchusyou_face_girl1.png",
+        "message": [
+            "お帰りなさい",
+            "ん……？",
+            "あーあ、お前か？前世の記憶がないってやつは。"
+        ],
+        "choices": {
+            "topic": "hoge",
+            "branch":[
+                {
+                    "title":"選択肢1",
+                    "value":"choice1"
+                },
+                {
+                    "title":"選択肢2",
+                    "value":"choice2"
+                },
+                {
+                    "title":"選択肢3",
+                    "value":"choice3"
+                }
+            ]
+        }
+    }
+]

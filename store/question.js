@@ -1,6 +1,6 @@
 export const state = () => ({
     question: false,
-    choices: []
+    choices: {}
 })
 
 export const mutations = {
