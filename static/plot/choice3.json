@@ -1,41 +1,42 @@
 [
     {
-        "character": "???",
-        "color": false,
-        "face": "enmadaiou.png",
+        "character": "オレ",
+        "color": true,
+        "face": "mama.png",
         "background": "dining.jpg",
         "message": [
-            "choice3",
-            "ん……？",
-            "あーあ、お前か？前世の記憶がないってやつは。"
+            "こんなもん食えるか！",
+           "（いやおれ何やってんだ！）"
         ]
     },
     {
-        "character": "???",
-        "color": true,
-        "face": "necchusyou_face_girl1.png",
+        "character": "ヨメ",
+        "color": false,
+        "face": "mama.png",
         "background": "dining.jpg",
         "message": [
-            "お帰りなさい",
-            "ん……？",
-            "あーあ、お前か？前世の記憶がないってやつは。"
-        ],
-        "choices": {
-            "topic": "hoge",
-            "branch":[
-                {
-                    "title":"選択肢1",
-                    "value":"choice1"
-                },
-                {
-                    "title":"選択肢2",
-                    "value":"choice2"
-                },
-                {
-                    "title":"選択肢3",
-                    "value":"choice3"
-                }
-            ]
-        }
+            "そうだったわね。あなた生クリーム苦手だったものね",
+            "私ったらいつもこう",
+            "ごめんね"
+        ]
+    },
+    {
+        "character": "オレ",
+        "color": true,
+        "face": "mama.png",
+        "background": "dining.jpg",
+        "message": [
+            "いや違うんだ、これはこうなんか魔がさしたというか。"
+        ]
+    },
+    {
+        "character": "ヨメ",
+        "color": false,
+        "face": "mama.png",
+        "background": "dining.jpg",
+        "message": [
+            "そうだったわね。あなた生クリーム苦手だったものね",
+            "私ったらいつもこう"
+        ]
     }
 ]

@@ -16,16 +16,6 @@ export default {
         }
     },
     computed: {
-        hoge() {
-            return {
-                /* opacity:'1',
-                transitionProperty: 'all',
-                transitonDuraiton: '0.09s',
-                transitionTimingFunction: 'linear',
-                transitionDelay: '2s' */
-                
-            }
-        }
     }
 }
 </script>

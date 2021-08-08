@@ -26,13 +26,11 @@ export default {
     },
     methods: {
         async choice (value) {
-            console.log(value)
             const plots = await this.$axios.$get(`/plot/${value}.json`)
             this.$store.commit("plot/SET_PLOT", plots)
             this.$store.commit('question/SHOW_QUESTION')
             this.$store.commit('plot/RESET_PLOT_COUNT')
             this.$store.commit('plot/RESET_PLOT_NUMBER')
-            this.audioElement.currentTime = 0
         }
     },
 }
@@ -99,7 +97,7 @@ export default {
     &__contents {
         position: absolute;
         width: 100%;
-        top: 20vh;
+        top: 10vh;
     }
     &__topic {
         color: #fff;
@@ -114,7 +112,7 @@ export default {
     &__list {
         border: 5px solid #04b6b8;
         border-radius: 10px;
-        background-color: rgba(241,255,255,.4);
+        background-color:#fff;
         margin: 0 auto;
         width: 90%;
         height: 20%;
@@ -125,10 +123,6 @@ export default {
         text-align: center;
         font-size: 1.5rem;
         font-weight: 700;
-    }
-    &__list:hover {
-        border-color: #ea2b8c;
-        background-color: rgba(241,255,255,.8);
     }
 }
 </style>

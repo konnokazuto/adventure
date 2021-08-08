@@ -4,9 +4,12 @@ export default {
   /*
   ** Headers of the page
   */
+ components: true,
+ ssr: false,
   router: {
       middleware: [
-          'setDeviceType'
+          'setDeviceType',
+          'audio'
       ]
   },
   head: {

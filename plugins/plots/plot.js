@@ -3,10 +3,11 @@ import Vue from 'vue'
 Vue.prototype.$const = {
     plot: [
         {
-            character: '???',
-            background: require('@/assets/backgroundImage/upstairs.jpg'),
+            isShow: true,
+            character: 'ボク',
+            background: require('@/assets/background/upstairs.jpg'),
             color: false,
-            face: require('@/assets/faceVariations/necchusyou_face_girl1.png'),
+            face: require('@/assets/faceVariations/mama.png'),
             message: [
                 'お帰りなさい',
                 'ん……？',
@@ -24,7 +25,7 @@ Vue.prototype.$const = {
         },
         {
             character: 'エンマ',
-            background: require('@/assets/backgroundImage/upstairs.jpg'),
+            background: require('@/assets/background/upstairs.jpg'),
             face: require('@/assets/faceVariations/enmadaiou.png'),
             color: false,
             message: [
@@ -41,7 +42,7 @@ Vue.prototype.$const = {
         },
         {
             character: 'エンマ',
-            background: require('@/assets/backgroundImage/upstairs.jpg'),
+            background: require('@/assets/background/upstairs.jpg'),
             face: require('@/assets/faceVariations/enmadaiou.png'),
             color: false,
             message: [
@@ -50,7 +51,7 @@ Vue.prototype.$const = {
                 '100秒だ。',
                 'お前が死ぬ100秒前の世界に行かせてやる。',
                 'そこで自分がなぜ死んだのか見てこい。',
-                'もし真実にたどり着くことができた時は、選ばせてやるよ、',
+                'もしお前が自分の死の真実にたどり着くことができた時は、選ばせてやるよ',
                 '天国に行くか、地獄に行くかをな。。'
             ]
         },
@@ -65,13 +66,35 @@ Vue.prototype.$const = {
         },
         {
             character: 'エンマ',
-            background: require('@/assets/backgroundImage/upstairs.jpg'),
+            background: require('@/assets/background/upstairs.jpg'),
             face: require('@/assets/faceVariations/enmadaiou.png'),
             color: false,
             message: [
                 '……………ふふふ',
                 'それには答えられねぇな。それに死人に"口無し"だろ？',
                 'さぁ行って来い…'
+            ]
+        },
+        {
+            "character": "???",
+            "color": false,
+            "face": "enmadaiou.png",
+            "background": "upstairs.jpg",
+            "bgm": "@/assets/bgm/saiban.mp3",
+            "message": [
+                "お前さんねぇ、今どきそんなシラの切り方するやついねぇのよ？",
+                "織田信長だって後輩にやれたって吐いたんだから"
+            ]
+        },
+        {
+            "character": "???",
+            "color": false,
+            "face": "enmadaiou.png",
+            "background": "upstairs.jpg",
+            "bgm": "@/assets/bgm/saiban.mp3",
+            "message": [
+                "お前さんねぇ、今どきそんなシラの切り方するやついねぇのよ？",
+                "織田信長だって後輩にやれたって吐いたんだから"
             ]
         },
     ]

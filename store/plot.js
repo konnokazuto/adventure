@@ -12,6 +12,7 @@ export const mutations = {
         state.plotCount++
     },
     RESET_PLOT_COUNT (state) {
+        console.log('RESET_PLOT_COUNT')
         state.plotCount = 0
     },
     ADD_PLOT_NUMBER (state) {
@@ -20,4 +21,8 @@ export const mutations = {
     RESET_PLOT_NUMBER (state) {
         state.plotNumber = 0 　
     },
+}
+
+export const actions = {
+
 }

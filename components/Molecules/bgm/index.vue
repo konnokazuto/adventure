@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bgm">
         <button @click="play">
 			BgmOn
 		</button>
@@ -10,6 +10,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
+import { mapMutations } from 'vuex'
 export default {
     data () {
 		return {
@@ -19,7 +20,7 @@ export default {
 	},
 	methods: {
 		play () {
-			this.audioElement.play()
+			this.$store.dispatch("audio/login", require('@/assets/bgm/' + this.plots[this.plotNumber].bgm + '.mp3'))
 		},
 		pause () {
 			this.audioElement.pause()
@@ -30,21 +31,22 @@ export default {
 			plots: state => state.plot.plots,
 			plotNumber: state => state.plot.plotNumber,
 			audioElement: state => state.audio.audioElement,
-        })
+        }),
+		gameBgm () {
+            return this.plots[this.plotNumber].bgm
+        }
 	},
-	mounted () {
-		const audio = new Audio()
-		this.$store.commit("audio/setAudioElement", audio)
-		/* this.$store.commit("audio/setAudioUrl", this.plots[this.plotNumber].bgm)
-		console.log(this.plots[this.plotNumber].bgm)
-		console.log(this.$store.state.audio.audioUrl) */
-		this.audioElement.src = require('@/assets/bgm/saiban.mp3')
-		this.audioElement.loop = true;
-		/* const audioContext = new AudioContext();
-		const audioElement = document.querySelector('audio');
-		const track = audioContext.createMediaElementSource(audioElement);
-		console.log(track)
-		track.connect(audioContext.destination); */
+	watch: {
+		gameBgm (newValue) {
+			this.$store.dispatch("audio/login", require('@/assets/bgm/' + newValue + '.mp3'))
+		}
 	}
 }
 </script>
+<style lang="scss" scoped>
+.bgm {
+	position: absolute;
+	top: 0;
+	z-index: 10000;
+}
+</style>

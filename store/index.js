@@ -1,12 +1,12 @@
 export const state = () => ({
     deviceType: 'sp',
     counter: -1,
-    url: require('@/assets/faceVariations/necchusyou_face_girl' + 1 + '.png')
+    url: require('@/assets/faceVariations/mama.png')
   })
 
   export const getters = {
     url(state) {
-      return require('@/assets/faceVariations/necchusyou_face_girl' + state.url + '.png')
+      return require('@/assets/faceVariations/' + state.url + '.png')
     }
   };
 
@@ -16,7 +16,7 @@ export const state = () => ({
         state.deviceType = type
     },
     setFaceVariation (state, n) {
-      state.url = require('@/assets/faceVariations/necchusyou_face_girl' + n + '.png')
+      state.url = require('@/assets/faceVariations/' + n + '.png')
     },
 
     setCounter (state) {

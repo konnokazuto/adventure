@@ -1,9 +1,10 @@
 export const state = () => ({
+  hoge: new Audio(),
   latestRadioNumber: 0,
   radioTitle: null,
   radioDate: null,
   radioMembers: null,
-  audioElement: 1,
+  audioElement: null,
   audioVolume: 0.5,
   audioUrl: null,
   currentTime: 0,
@@ -40,6 +41,13 @@ export const mutations = {
   setAudioElement(state, elem) {
     state.audioElement = elem
   },
+  setAudioElementSrc(state, elem) {
+    state.audioElement.src = elem
+  },
+  startAudioElement(state, elem) {
+    console.log('startAudioElement直前')
+    state.audioElement.play()
+  },
   setAudioVolume(state, payload) {
     state.audioVolume = payload
   },
@@ -67,4 +75,15 @@ export const mutations = {
   setPlayRate(state, payload) {
     state.playRate = payload
   }
+}
+
+export const actions = {
+  login ({commit}, payload) {
+    console.log(payload)
+    commit('setAudioElementSrc' ,payload)
+    console.log('startAudioElementを実行する前')
+    commit("startAudioElement")
+    console.log('test')
+  }
+
 }

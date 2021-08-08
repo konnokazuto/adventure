@@ -1,30 +1,19 @@
 <template>
-	<div class="gameScreen">
-        <div class="gameScreen__inner">
-            <text-box @hoge="hoge" :plot="plots" class="gameScreen__textBox"></text-box>
-            <question v-if="question"></question>
-            <bgm></bgm>
-        </div>
+	<div :class="injectClass" class="gameScreen">
+        <back-ground />
+        <character />
+        <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window>
+        <question v-if="question"></question>
+        <bgm></bgm>
 	</div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import TextBox from '@/components/Organisms/TextBox'
-import Timer from '@/components/Organisms/Timer'
-import question from '@/components/Organisms/Question'
-import bgm from '@/components/Molecules/bgm'
 
 export default {
-	components: {
-		TextBox,
-        Timer,
-        question,
-        bgm
-    },
     data () {
         return {
-            img: require('@/assets/backgroundImage/dining.jpg'),
             items: null
         }
     },
@@ -69,11 +58,22 @@ export default {
         text-align: center;
     }
 }
+.sp.gameScreen {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+}
 .sp .gameScreen {
 	&__inner {
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 		background: #000;
+	}
+    &__textBox {
+		position: absolute;
+		bottom: 40px;
+		width: 100%;
+		z-index: 10;
 	}
 }
 </style>

@@ -2,39 +2,117 @@
     {
         "character": "???",
         "color": false,
-        "face": "enmadaiou.png",
-        "background": "upstairs.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "face": "",
+        "background": "",
+        "bgm": "n94",
         "message": [
-            "お帰りなさい",
-            "ん……？",
-            "あーあ、お前か？前世の記憶がないってやつは。"
+            "ハッピバースデートューユー",
+            "ハッピバースデーディア",
+            "<span style='color:red'>パパー♪</span>",
+            "ハッピバースデートューユー",
+            "パパ誕生日おめでとうーー！"
+        ]
+    },
+    {
+        "character": "???",
+        "color": false,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "n94",
+        "message": [
+            "パパ誕生日おめでとうーー！"
+        ]
+    },
+    {
+        "character": "オレ",
+        "color": true,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "n94",
+        "message": [
+            "パパ誕生日おめでとうーー！"
+        ]
+    },
+    {
+        "character": "オレ",
+        "color": true,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "Kansei",
+        "message": [
+            "…………………",
+            "パパ…？"
         ]
     },
     {
         "character": "???",
         "color": true,
-        "background": "dining.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "face": "necchusyou_face_girl1.png",
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "Kansei",
         "message": [
-            "お帰りなさい",
-            "ん……？",
-            "あーあ、お前か？前世の記憶がないってやつは。"
+            "何一回死んで生き返ったみたいな顔してんのよ",
+            "ほらこの子に手伝ってもらって"
+        ]
+    },
+    {
+        "character": "オレ",
+        "color": true,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "Kansei",
+        "message": [
+            "(落ち着け一回整理しよう)",
+            "（どうやら目の前にいる人間はオレのヨメとムスメらしい)",
+            "（そして忘れてはならないのは、この家族団欒の最中にオレは死を迎えると言うことだ。)"
+        ]
+    },
+    {
+        "character": "ヨメ",
+        "color": true,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "saiban",
+        "message": [
+            "何ぶつぶつ言ってんの？",
+            "ほらこの子に手伝ってもらって誕生日ケーキ作ったんだよ"
+        ]
+    },
+    {
+        "character": "オレ",
+        "color": true,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "saiban",
+        "message": [
+            "(この状況下で死ぬとしたら何が考えられる？)",
+            "(いきなり第三者が侵入してきて殺されたとか)",
+            "(それとも)"
+        ]
+    },
+    {
+        "character": "ヨメ",
+        "color": true,
+        "face": "mama.png",
+        "background": "hell.jpg",
+        "bgm": "saiban",
+        "message": [
+            "ねぇ本当に大丈夫？",
+            "ほらせっかく作ったんだから食べて食べて"
         ],
         "choices": {
-            "topic": "hoge",
+            "topic": "ケーキかどうしよう",
             "branch":[
                 {
-                    "title":"選択肢1",
+                    "title":"一口でガブリ",
                     "value":"choice1"
                 },
                 {
-                    "title":"選択肢2",
+                    "title":"ゆっくり味わう",
                     "value":"choice2"
                 },
                 {
-                    "title":"選択肢3",
+                    "title":"ちゃぶ台をひっくり返す",
                     "value":"choice3"
                 }
             ]
