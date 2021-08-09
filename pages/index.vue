@@ -1,20 +1,28 @@
 <template>
 	<div :class="injectClass" class="gameScreen">
-        <!-- <back-ground /> -->
-        <!-- <character /> -->
+        <back-ground />
+        <character />
         <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window>
-        <!-- <question v-if="question"></question> -->
-        <!-- <bgm></bgm> -->
+        <question v-if="question"></question>
+        <bgm></bgm>
 	</div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
-import MessageWindow from '~/components/MessageWindow.vue'
+import MessageWindow from '@/components/Organisms/MessageWindow'
+import Character from '@/components/Organisms/Character'
+import Question from '@/components/Organisms/Question'
+import BackGround from '@/components/Molecules/BackGround'
+import bgm from '@/components/Molecules/bgm'
 
 export default {
     components: {
         MessageWindow,
+        Character,
+        BackGround,
+        Question,
+        bgm
     },
     computed: {
         ...mapState({
