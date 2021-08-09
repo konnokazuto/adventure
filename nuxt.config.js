@@ -6,12 +6,6 @@ export default {
   ** Headers of the page
   */
   target: 'static',
-  components: [
-    '@/components', // componentsディレクトリ配下のファイルを自動importしたい場合
-    '@/components/atoms',
-    '@/components/Molecules', // components/moleculesディレクトリ内のファイルを自動importしたい場合
-    '@/components/Organisms',
-  ],
  ssr: false,
   router: {
       middleware: [
