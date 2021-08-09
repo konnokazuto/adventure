@@ -45,7 +45,6 @@ export const mutations = {
     state.audioElement.src = elem
   },
   startAudioElement(state, elem) {
-    console.log('startAudioElement直前')
     state.audioElement.play()
   },
   setAudioVolume(state, payload) {
@@ -79,11 +78,8 @@ export const mutations = {
 
 export const actions = {
   login ({commit}, payload) {
-    console.log(payload)
     commit('setAudioElementSrc' ,payload)
-    console.log('startAudioElementを実行する前')
     commit("startAudioElement")
-    console.log('test')
   }
 
 }

@@ -14,9 +14,6 @@ export default {
           'audio'
       ]
   },
-  env: {
-    baseURL: process.env.BASE_URL
-  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
@@ -29,7 +26,7 @@ export default {
     ]
   },
   env: {
-    baseURL: (process.env.NODE_ENV === 'production' ? 'http//your-url' : 'http://localhost:3000')
+    baseURL: (process.env.NODE_ENV === 'production' ? 'https://relaxed-blackwell-749eb9.netlify.app' : 'http://localhost:3000')
   },
   /*
   ** Customize the progress-bar color

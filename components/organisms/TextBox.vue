@@ -50,7 +50,6 @@ export default {
         },
         boxShow () {
             if (this.plots[this.plotNumber].isShow === true) {
-                console.log('hoge')
                 this.boxShow = false
             }
         }

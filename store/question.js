@@ -8,7 +8,6 @@ export const mutations = {
         state.question = !state.question
     },
     SET_QUESTION  (state, choices) {
-        console.log(choices)
         state.choices = choices
     }
 }
