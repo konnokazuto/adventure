@@ -3,7 +3,14 @@
         <!-- <back-ground /> -->
         <!-- <character /> -->
         <!-- <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window> -->
-        <text-box />
+        <div class="textBox__characterName" :class="{pink: plots[plotNumber].color}">{{plots[plotNumber].character}}</div>
+        <div :class="{pink: plots[plotNumber].color}" class="textBox__main">
+            <div>
+                <div class="aho" v-text="text">
+                </div>
+            </div>
+            <button @click="slideNextText" :class="{pink: plots[plotNumber].color}" class="textBox__button">Next</button>
+        </div>
         <!-- <question v-if="question"></question> -->
         <!-- <bgm></bgm> -->
 	</div>
@@ -16,13 +23,33 @@ export default {
     computed: {
         ...mapState({
             plots: state => state.plot.plots,
+            plotCount: state => state.plot.plotCount,
+            plotNumber: state => state.plot.plotNumber,
             question: state => state.question.question
         }),
+        text () {
+            return this.plots[this.plotNumber].message[this.plotCount]
+        },
     },
     async fetch({store, $axios }) {
         const plots = await $axios.$get(process.env.baseURL + '/hoge.json')
         console.log(plots)
         store.commit("plot/SET_PLOT", plots)
+    },
+    methods: {
+        slideNextText() {
+            if (this.plotCount + 1 >= this.plots[this.plotNumber].message.length) {
+                if(this.plotNumber + 1 === this.plots.length) {
+                    this.$store.commit('question/SET_QUESTION', this.plot[this.plotNumber].choices)
+                    this.$store.commit('question/SHOW_QUESTION')
+                    return
+                }
+                this.$store.commit('plot/ADD_PLOT_NUMBER')
+                this.$store.commit('plot/RESET_PLOT_COUNT')
+                return
+            }
+            this.$store.commit('plot/ADD_PLOT_COUNT')
+        },
     }
 }
 </script>
