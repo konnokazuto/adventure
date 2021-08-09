@@ -6,6 +6,7 @@ export default {
   /*
   ** Headers of the page
   */
+  target: 'static',
  components: true,
  ssr: false,
   router: {
