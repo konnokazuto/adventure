@@ -91,10 +91,8 @@ export default {
         padding-left: 30px;
         font-weight: 700;
         font-size: 25px;
-        background-image: url('~@/assets/background/name-bg-man.png');
     }
     &__characterName.pink {
-        background-image: url('~@/assets/background/name-bg.png');
     }
     &__main {
         width: 800px;
@@ -199,10 +197,8 @@ export default {
         padding-left: 30px;
         font-weight: 700;
         font-size: 25px;
-        background-image: url('~@/assets/background/name-bg-man.png');
     }
     &__characterName.pink {
-        background-image: url('~@/assets/background/name-bg.png');
     }
     &__main {
         width: 100%;
@@ -280,7 +276,6 @@ export default {
 }
 
 .name-box {
-    background-image: url('~@/assets/background/name-bg-man.png');
 }
 
 
