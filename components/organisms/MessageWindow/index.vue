@@ -1,15 +1,13 @@
 <template>
     <div class="textBox" :class="injectClass">
-        hoge
-        {{plot}}
-        <!-- <div class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
+        <div class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
         <div :class="{pink: plot[plotNumber].color}" class="textBox__main">
             <div>
                 <div class="aho" v-text="text">
                 </div>
             </div>
             <button @click="slideNextText" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
-        </div> -->
+        </div>
     </div>
 </template>
 <script>

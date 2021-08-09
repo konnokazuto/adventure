@@ -10,8 +10,12 @@
 
 <script>
 import { mapState } from 'vuex'
+import MessageWindow from '@/components/Organisms/MessageWindow'
 
 export default {
+    components: {
+        MessageWindow,
+    },
     computed: {
         ...mapState({
             plots: state => state.plot.plots,
