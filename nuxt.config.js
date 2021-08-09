@@ -1,3 +1,5 @@
+const environment = process.env.NODE_ENV
+const env = require(`./env.${environment}.js`)
 
 export default {
   mode: 'universal',
@@ -11,6 +13,9 @@ export default {
           'setDeviceType',
           'audio'
       ]
+  },
+  env: {
+    baseURL: process.env.BASE_URL
   },
   head: {
     title: process.env.npm_package_name || '',

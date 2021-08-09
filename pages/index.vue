@@ -12,25 +12,15 @@
 import { mapState } from 'vuex'
 
 export default {
-    data () {
-        return {
-            items: null
-        }
-    },
     computed: {
         ...mapState({
             plots: state => state.plot.plots,
             question: state => state.question.question
         }),
-        /* doneTodosCount () {
-            return this.$store.getters.plots
-        } */
     },
     async fetch({store, $axios }) {
-        const plots = await $axios.$get('/hoge.json')
+        const plots = await $axios.$get(process.env.baseURL + '/hoge.json')
         store.commit("plot/SET_PLOT", plots)
-        // OR
-        // const users = await $axios.$get('http://localhost:3000/axios-assets-json')
     }
 }
 </script>

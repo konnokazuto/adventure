@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../macaroni-store-docker/www/macaroni-ranking-service"
 		}
 	]
 }
