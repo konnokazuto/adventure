@@ -1,10 +1,11 @@
 <template>
 	<div :class="injectClass" class="gameScreen">
-        <back-ground />
-        <character />
-        <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window>
-        <question v-if="question"></question>
-        <bgm></bgm>
+        hoge
+        <!-- <back-ground /> -->
+        <!-- <character /> -->
+       <!--  <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window> -->
+        <!-- <question v-if="question"></question> -->
+        <!-- <bgm></bgm> -->
 	</div>
 </template>
 
@@ -12,7 +13,7 @@
 import { mapState } from 'vuex'
 
 export default {
-    computed: {
+    /* computed: {
         ...mapState({
             plots: state => state.plot.plots,
             question: state => state.question.question
@@ -22,7 +23,7 @@ export default {
         const plots = await $axios.$get(process.env.baseURL + '/hoge.json')
         console.log(plots)
         store.commit("plot/SET_PLOT", plots)
-    }
+    } */
 }
 </script>
 
