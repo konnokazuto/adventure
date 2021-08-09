@@ -11,22 +11,22 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.13.6",
-    "acorn": "^8.4.1",
-    "axios": "^0.21.1",
+    "@nuxtjs/axios": "^5.12.1",
+    "acorn": "^8.0.1",
+    "axios": "^0.20.0",
     "cross-env": "^7.0.3",
-    "dot-prop": "^6.0.1",
+    "dot-prop": "^5.2.0",
     "kind-of": "^6.0.3",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.20",
     "minimist": "^1.2.5",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.14.3",
     "nuxt-user-agent": "^1.2.2",
-    "serialize-javascript": "^6.0.0",
-    "vuex": "^3.6.2"
+    "serialize-javascript": "^4.0.0",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
     "json-loader": "^0.5.7",
-    "node-sass": "^6.0.1",
-    "sass-loader": "^12.1.0"
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
   }
 }
