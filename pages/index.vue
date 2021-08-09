@@ -10,8 +10,16 @@
 
 <script>
 import { mapState } from 'vuex'
+import messageWindow from '@/components/Organisms/MessageWindow'
 
 export default {
+    data () {
+        return {
+            components: {
+                messageWindow
+            }
+        }
+    },
     computed: {
         ...mapState({
             plots: state => state.plot.plots,
@@ -20,6 +28,7 @@ export default {
     },
     async fetch({store, $axios }) {
         const plots = await $axios.$get(process.env.baseURL + '/hoge.json')
+        console.log(process.env.baseURL)
         console.log(plots)
         store.commit("plot/SET_PLOT", plots)
     }
