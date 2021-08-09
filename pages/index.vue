@@ -10,7 +10,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import MessageWindow from '@/components/Organisms/MessageWindow'
+import MessageWindow from '~/components/Organisms/MessageWindow'
 
 export default {
     components: {
