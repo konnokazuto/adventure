@@ -2,7 +2,6 @@ const environment = process.env.NODE_ENV
 const env = require(`./env.${environment}.js`)
 
 export default {
-  mode: 'universal',
   /*
   ** Headers of the page
   */

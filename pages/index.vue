@@ -2,7 +2,8 @@
 	<div :class="injectClass" class="gameScreen">
         <!-- <back-ground /> -->
         <!-- <character /> -->
-        <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window>
+        <!-- <message-window @hoge="hoge" :plot="plots" class="gameScreen__textBox"></message-window> -->
+        <text-box />
         <!-- <question v-if="question"></question> -->
         <!-- <bgm></bgm> -->
 	</div>
