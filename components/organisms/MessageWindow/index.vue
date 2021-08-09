@@ -1,14 +1,15 @@
 <template>
-    <div v-if="boxShow" class="textBox" :class="injectClass">
-        <div class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
+    <div class="textBox" :class="injectClass">
+        hoge
+        {{plot}}
+        <!-- <div class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
         <div :class="{pink: plot[plotNumber].color}" class="textBox__main">
             <div>
                 <div class="aho" v-text="text">
-                   <!--  <span v-for="(t, index) in array" :key="index" class="item" :style="{ animationDelay: index * 1000+'ms' }" v-text="t"/> -->
                 </div>
             </div>
             <button @click="slideNextText" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
