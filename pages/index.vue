@@ -20,6 +20,7 @@ export default {
     },
     async fetch({store, $axios }) {
         const plots = await $axios.$get(process.env.baseURL + '/hoge.json')
+        console.log(plots)
         store.commit("plot/SET_PLOT", plots)
     }
 }
