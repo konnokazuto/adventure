@@ -1,5 +1,8 @@
 <template>
     <div v-if="boxShow" class="textBox" :class="injectClass">
+        <div class="textBox__character">
+            <img v-if="imageUrl" :src="require(`@/assets/faceVariations/${imageUrl}`)" class="textBox__characterImage">
+        </div>
         <div class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
         <div :class="{pink: plot[plotNumber].color}" class="textBox__main">
             <div>
@@ -9,6 +12,9 @@
             </div>
             <button @click="slideNextText" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
         </div>
+        <!-- <div class="textBox__background">
+            <img :src="require(`@/assets/background/${backgroundUrl}`)" alt="hoge">
+        </div> -->
     </div>
 </template>
 <script>
@@ -23,6 +29,7 @@ export default {
     },
     data() {
         return {
+            array: [],
             boxShow: true
         }
     },
