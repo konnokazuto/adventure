@@ -21,6 +21,7 @@
     "minimist": "^1.2.5",
     "nuxt": "^2.14.3",
     "nuxt-user-agent": "^1.2.2",
+    "nuxt-webfontloader": "^1.1.0",
     "serialize-javascript": "^4.0.0",
     "vuex": "^3.5.1"
   },

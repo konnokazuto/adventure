@@ -54,8 +54,14 @@ export default {
   */
   modules: [
     "@nuxtjs/axios",
-    'nuxt-user-agent'
+    'nuxt-user-agent',
+    'nuxt-webfontloader'
   ],
+  webfontloader: {
+    google: {
+      families: ['Lato:400,700', 'Noto+Sans+JP:400,700']
+    }
+  },
   /*
   ** Build configuration
   */

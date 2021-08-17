@@ -1,0 +1,47 @@
+[
+    {
+        "character": "ボク",
+        "color": false,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "行かない",
+            "と言ったら？"
+        ]
+    },
+    {
+        "character": "エンマ",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "そんときは問答無用に地獄行きだな。"
+        ]
+    },
+    {
+        "character": "ボク",
+        "color": false,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "だと思ったよ。",
+            "行くよ、行かせてくれ。",
+            "自分がなぜ死んだのか、その理由がわからなかったら、",
+            "死んでも死に切れない。"
+        ]
+    },
+    {
+        "character": "エンマ",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "そうか、じゃあ覚悟はできたようだな",
+            "さぁもう一度死んでこい。"
+        ]
+    }
+]

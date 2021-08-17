@@ -1,12 +1,11 @@
 <template>
-    <div class="textBox" :class="injectClass">
-        <div class="textBox__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
-        <div :class="{pink: plot[plotNumber].color}" class="textBox__main">
+    <div class="messageWindow" :class="injectClass">
+        <div class="messageWindow__characterName" :class="{pink: plot[plotNumber].color}">{{plot[plotNumber].character}}</div>
+        <div :class="{pink: plot[plotNumber].color}" class="messageWindow__main">
             <div>
-                <div class="aho" v-text="text">
-                </div>
+                <div class="aho" v-html="text"></div>
             </div>
-            <button @click="slideNextText" :class="{pink: plot[plotNumber].color}" class="textBox__button">Next</button>
+            <button @click="slideNextText" :class="{pink: plot[plotNumber].color}" class="messageWindow__button">Next</button>
         </div>
     </div>
 </template>
@@ -22,7 +21,8 @@ export default {
     },
     data() {
         return {
-            boxShow: true
+            boxShow: true,
+            boke: '<div>hoge</div>'
         }
     },
     computed: {
@@ -67,21 +67,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.pc .textBox {
-    &__character {
-        text-align: center;
-    }
-    &__characterImage {
-        width: 290px;
-        height: 400px;
-        object-fit: cover;
-    }
+.pc .messageWindow {
     &__characterName {
         line-height: .755;
         width: 290px;
         height: 77px;
         top: 14px;
-        left: 320px;
+        left: 150px;
         position: relative;
         color: #fff;
         background-repeat: no-repeat;
@@ -171,9 +163,7 @@ export default {
         height: 100%;
     }
 }
-.sp.textBox {
-}
-.sp .textBox {
+.sp .messageWindow{
     &__character {
         text-align: center;
         margin: 0 auto;
@@ -277,16 +267,4 @@ export default {
         font-size: 30px;
     }
 }
-
-.name-box {
-    background-image: url('~@/assets/background/name-bg-man.png');
-}
-
-
-.text-box {
-    width: 92%;
-    bottom: 50px;
-    margin: 0 auto;
-}
-
 </style>

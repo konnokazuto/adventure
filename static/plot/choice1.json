@@ -3,7 +3,7 @@
         "character": "???",
         "color": false,
         "background": "upstairs.jpg",
-        "face": "enmadaiou.png",
+        "face": "enmadaiou",
         "bgm": "saiban",
         "message": [
             "choice1",

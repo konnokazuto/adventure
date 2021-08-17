@@ -1,5 +1,6 @@
 export const state = () => ({
     deviceType: 'sp',
+    gameover: false,
     counter: -1,
     url: require('@/assets/faceVariations/mama.png')
   })
@@ -21,5 +22,8 @@ export const state = () => ({
 
     setCounter (state) {
         state.counter += 1
+    },
+    setGameOver (state, n) {
+      state.gameover = n
     }
   }

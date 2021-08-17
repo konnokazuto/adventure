@@ -1,10 +1,10 @@
 [
     {
         "character": "エンマ",
-        "color": false,
-        "face": "enmadaiou.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
             "次のものー中に入れ！",
             "ん……？",
@@ -12,11 +12,11 @@
         ]
     },
     {
-        "character": "オレ",
-        "color": true,
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "face": "enmadaiou.png",
+        "character": "ボク",
+        "color": false,
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "face": "enmadaiou",
         "message": [
             "ええ、自分が一体誰なのか。",
             "そもそもなんで死んだのかまったく思い出せないんです。"
@@ -24,10 +24,10 @@
     },
     {
         "character": "エンマ",
-        "color": false,
-        "face": "enmadaiou.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
             "お前さんねぇ、今どきそんなシラの切り方するやついねぇのよ？",
             "織田信長だって後輩にやれたって吐いたんだから。"
@@ -35,181 +35,95 @@
     },
     {
         "character": "オレ",
-        "color": true,
-        "face": "enmadaiou.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "color": false,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
             "…………………………",
-            "(そんなこと言われたって本当に思い出せないんだよ)"
+            "(そんなこと言われたって本当に思い出せないんだ。)"
         ]
     },
     {
         "character": "エンマ",
-        "color": false,
-        "face": "enmadaiou.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "でもまぁ、面白そうだからお前にチャンスをやるよ。",
-            "特別にお前が死ぬ間際の世界に行かせてやる。",
-            "そしてもう一回死んでこい。",
-            "もしお前が自分の死の真実にたどり着くことができた時は選ばせてやるよ。",
-            "天国へ行くか、地獄へ行くかをな。"
-        ]
-    },
-    {
-        "character": "オレ",
+        "subWindow": "syorui_yamadumi.png",
         "color": true,
-        "face": "enmadaiou.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
-            "…………わかった。",
-            "でも、もし真実に到達できなかったらどうなるんだ？"
+            "えーとお前さんの調書はと",
+            "…………………………",
+            "(なるほどな、こいつはおもしれぇな。)"
         ]
     },
     {
         "character": "エンマ",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "なぁお前さん。",
+            "もう一回死んでみる気はねぇかい？"
+        ]
+    },
+    {
+        "character": "オレ",
         "color": false,
-        "face": "enmadaiou.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
-            "ふふふ…",
-            "それには答えられねぇな。死人に口無しだろ？",
-            "さぁもう一度死んでこい"
+            "もう一回死ぬ？"
+        ]
+    },
+    {
+        "character": "エンマ",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "特別に死ぬ間際の世界へ行かせてやる",
+            "そこでもしお前さんが自分の死の真相にたどり着けたら選ばせてやるよ。",
+            "<span style='color: #EF4123;'>天国へ行くか地獄へ行くか。</span>"
         ]
     },
     {
         "character": "オレ",
-        "color": true,
-        "face": "",
-        "background": "",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "",
-            "…………………………",
-            "…………………ん？",
-            "………ここはどこだ?"
-        ]
-    },
-    {
-        "character": "???",
         "color": false,
-        "face": "",
-        "background": "",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
-            "ハッピバースデートューユー",
-            "ハッピバースデートューユー",
-            "ハッピバースデーディア",
-            "<span style='color:red'>パパー♪</span>",
-            "ハッピバースデートューユー",
-            "パパ誕生日おめでとうーー！"
+            "何が目的ですか？",
+            "エンマ大王がそんな話を持ちかけるなんて聞いたことがない。"
         ]
     },
     {
-        "character": "???",
-        "color": false,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "パパ誕生日おめでとうーー！"
-        ]
-    },
-    {
-        "character": "オレ",
+        "character": "エンマ",
         "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
         "message": [
-            "パパ誕生日おめでとうーー！"
-        ]
-    },
-    {
-        "character": "オレ",
-        "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "…………………",
-            "パパ…？"
-        ]
-    },
-    {
-        "character": "???",
-        "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "何一回死んで生き返ったみたいな顔してんのよ",
-            "ほらこの子に手伝ってもらって"
-        ]
-    },
-    {
-        "character": "オレ",
-        "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "(落ち着け一回整理しよう)",
-            "（どうやら目の前にいる人間はオレのヨメとムスメらしい)",
-            "（そして忘れてはならないのは、この家族団欒の最中にオレは死を迎えると言うことだ。)"
-        ]
-    },
-    {
-        "character": "ヨメ",
-        "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "何ぶつぶつ言ってんの？",
-            "ほらこの子に手伝ってもらって誕生日ケーキ作ったんだよ"
-        ]
-    },
-    {
-        "character": "オレ",
-        "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "(この状況下で死ぬとしたら何が考えられる？)",
-            "(いきなり第三者が侵入してきて殺されたとか)",
-            "(それとも)"
-        ]
-    },
-    {
-        "character": "ヨメ",
-        "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "@/assets/bgm/saiban.mp3",
-        "message": [
-            "ねぇ本当に大丈夫？",
-            "ほらせっかく作ったんだから食べて食べて"
+            "俺はな、ただ裁くことに飽きたんだよ。",
+            "正直お前さんが天国へ行こうか、地獄へ行こうかどうでもいいんだよ。",
+            "<span style='color: #EF4123;'>天国へ行くか地獄へ行くか。</span>",
+            "それにこれはお前さんにとっても悪い話じゃあねぇと思うけどな",
+            "さぁどうする？"
         ],
         "choices": {
-            "topic": "ケーキかどうしよう",
+            "topic": "そんなもの",
             "branch":[
                 {
-                    "title":"一口でガブリ",
-                    "value":"choice1"
+                    "title":"行く",
+                    "value":"chapter1"
                 },
                 {
-                    "title":"ゆっくり味わう",
-                    "value":"choice2"
-                },
-                {
-                    "title":"ちゃぶ台をひっくり返す",
-                    "value":"choice3"
+                    "title":"行かない",
+                    "value":"chapter2"
                 }
             ]
         }

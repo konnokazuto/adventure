@@ -1,14 +1,15 @@
 [
     {
         "character": "???",
+        "subWindow": "knife.png",
         "color": false,
-        "face": "",
-        "background": "",
+        "face": "mama",
+        "background": "dining.jpg",
         "bgm": "n94",
         "message": [
             "ハッピバースデートューユー",
             "ハッピバースデーディア",
-            "<span style='color:red'>パパー♪</span>",
+            "<span style='color: #EF4123;'>パパー♪</span>",
             "ハッピバースデートューユー",
             "パパ誕生日おめでとうーー！"
         ]
@@ -16,7 +17,18 @@
     {
         "character": "???",
         "color": false,
-        "face": "mama.png",
+        "face": "enmadaiou",
+        "background": "hell.jpg",
+        "bgm": "n94",
+        "message": [
+            "パパ誕生日おめでとうーー！"
+        ]
+    },
+    {
+        "character": "オレ",
+        "subWindow": "knife.png",
+        "color": true,
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "n94",
         "message": [
@@ -26,17 +38,7 @@
     {
         "character": "オレ",
         "color": true,
-        "face": "mama.png",
-        "background": "hell.jpg",
-        "bgm": "n94",
-        "message": [
-            "パパ誕生日おめでとうーー！"
-        ]
-    },
-    {
-        "character": "オレ",
-        "color": true,
-        "face": "mama.png",
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "Kansei",
         "message": [
@@ -47,7 +49,7 @@
     {
         "character": "???",
         "color": true,
-        "face": "mama.png",
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "Kansei",
         "message": [
@@ -58,7 +60,7 @@
     {
         "character": "オレ",
         "color": true,
-        "face": "mama.png",
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "Kansei",
         "message": [
@@ -70,7 +72,7 @@
     {
         "character": "ヨメ",
         "color": true,
-        "face": "mama.png",
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "saiban",
         "message": [
@@ -81,7 +83,7 @@
     {
         "character": "オレ",
         "color": true,
-        "face": "mama.png",
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "saiban",
         "message": [
@@ -93,7 +95,7 @@
     {
         "character": "ヨメ",
         "color": true,
-        "face": "mama.png",
+        "face": "mama",
         "background": "hell.jpg",
         "bgm": "saiban",
         "message": [

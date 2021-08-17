@@ -1,0 +1,37 @@
+[
+    {
+        "character": "ボク",
+        "color": false,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "行くに決まってるだろ",
+            "自分がなぜ死んだのか、その理由がわからなかったら、",
+            "死んでも死にきれない。"
+        ]
+    },
+    {
+        "character": "エンマ",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "そういうと思ってたぜ。",
+            "覚悟はできたな？",
+            "さぁ死んでこい"
+        ]
+    },
+    {
+        "character": "エンマ",
+        "color": true,
+        "face": "enmadaiou",
+        "background": "upstairs.jpg",
+        "bgm": "saiban",
+        "message": [
+            "お前さんねぇ、今どきそんなシラの切り方するやついねぇのよ？",
+            "織田信長だって後輩にやれたって吐いたんだから。"
+        ]
+    }
+]

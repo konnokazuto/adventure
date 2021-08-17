@@ -1,11 +1,11 @@
 <template>
     <div class="bgm">
-        <button @click="play">
-			BgmOn
-		</button>
-		<button @click="pause">
+		<div v-if="isPlay" @click="pause">
 			BgmOff
-		</button>
+		</div>
+        <div v-else @click="play">
+			BgmOn
+		</div>
     </div>
 </template>
 <script>
@@ -20,9 +20,11 @@ export default {
 	},
 	methods: {
 		play () {
+			this.isPlay = true
 			this.$store.dispatch("audio/login", require('@/assets/bgm/' + this.plots[this.plotNumber].bgm + '.mp3'))
 		},
 		pause () {
+			this.isPlay = false
 			this.audioElement.pause()
 		}
 	},
@@ -38,7 +40,9 @@ export default {
 	},
 	watch: {
 		gameBgm (newValue) {
-			this.$store.dispatch("audio/login", require('@/assets/bgm/' + newValue + '.mp3'))
+			if (this.isPlay) {
+				this.$store.dispatch("audio/login", require('@/assets/bgm/' + newValue + '.mp3'))
+			}
 		}
 	}
 }
@@ -47,6 +51,9 @@ export default {
 .bgm {
 	position: absolute;
 	top: 0;
-	z-index: 10000;
+	z-index: 100;
+	font-family: "ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino";
+	color: #fff;
+	font-weight: bold;
 }
 </style>
