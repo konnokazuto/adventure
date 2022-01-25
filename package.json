@@ -17,7 +17,7 @@
     "cross-env": "^7.0.3",
     "dot-prop": "^5.2.0",
     "kind-of": "^6.0.3",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "minimist": "^1.2.5",
     "nuxt": "^2.14.3",
     "nuxt-user-agent": "^1.2.2",
